@@ -1,0 +1,28 @@
+:css
+  .forgot-col{
+    color:#fff;
+    padding:0 20px;
+  }
+
+!!!
+%html{lang: "en"}
+  %head
+    %title FirstMile
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:name => "description" , :content => "FirstMile"}
+    = favicon_link_tag 'favicon.png'
+    %link{:href => "http://fonts.googleapis.com/css?family=Salsa", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,300,700", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag "signup", media: "all"
+    = javascript_include_tag "application"
+    = yield :head
+    = csrf_meta_tag
+    = javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"
+  %body
+    .wrapper
+      .header
+        .logo
+          %a{:href => "#"}
+            =image_tag("new_logo.png")
+          %span.logo-tail
+      = yield
