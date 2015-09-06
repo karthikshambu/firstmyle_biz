@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Companies</h1>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover"
+
+      <thead>
+        <tr>
+          <th>CustomerTypeID</th>
+          <th>ConsumerID</th>
+          <th>StreetID</th>
+          <th>ApartmentID</th>
+          <th>NeighborhoodID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>OrganizationID</th>
+          <th>Address</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.customer_type_id %></td>
+            <td><%= customer.consumer_id %></td>
+            <td><%= customer.street_id %></td>
+            <td><%= customer.apartment_id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.email %></td>
+            <td><%= customer.neighborhood_id %></td>
+            <td><%= customer.organization_id %></td>
+            <td><%= customer.address %></td>
+            </tr>
+        <% end %>
+      </tbody>
+</table>
+</div>
+</div>
+<br>
+
+<h3>Import Customers</h3>
+
+<%= form_tag import_organizations_path,multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Upload Customers" %>
+<% end %>
+
+
+

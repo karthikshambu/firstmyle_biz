@@ -7,7 +7,11 @@ FirstmyleBiz::Application.routes.draw do
     # post 'organizations/sign_in' => 'users/sessions#create_business_sign_in', :as => 'create_business_session'
   end
 
-  resources :organizations#, path_names: { new: 'enroll' } do
+  resources :organizations do
+    collection { get 'customers_new'
+      post 'import'
+      }
+  end#, path_names: { new: 'enroll' } do
   # end
 
   # The priority is based upon order of creation:

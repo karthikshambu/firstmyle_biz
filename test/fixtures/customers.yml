@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_type_id: 1
+  consumer_id: 1
+  street_id: 1
+  apartment_id: 1
+  neighborhood_id: 1
+  name: MyString
+  email: MyString
+  organization_id: 1
+  address: MyString
+
+two:
+  customer_type_id: 1
+  consumer_id: 1
+  street_id: 1
+  apartment_id: 1
+  neighborhood_id: 1
+  name: MyString
+  email: MyString
+  organization_id: 1
+  address: MyString

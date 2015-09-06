@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150904064900) do
+ActiveRecord::Schema.define(:version => 20150906072622) do
+
+  create_table "customer_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "organization_id"
+    t.string   "description"
+    t.string   "status"
+    t.string   "file"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "customers", :force => true do |t|
+    t.integer  "customer_type_id"
+    t.integer  "consumer_id"
+    t.integer  "street_id"
+    t.integer  "apartment_id"
+    t.integer  "neighborhood_id"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "organization_id"
+    t.string   "address"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
