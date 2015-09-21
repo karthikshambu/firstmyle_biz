@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  field_type: MyString
+  field_name: MyString
+  field_value: MyString
+  customer: 
+
+two:
+  field_type: MyString
+  field_name: MyString
+  field_value: MyString
+  customer: 
