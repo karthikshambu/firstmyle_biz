@@ -1,0 +1,17 @@
+%legend
+  = "Edit Customer Field Data Types For List : #{CustomerType.find(params[:customer_type_id]).name}"
+= form_tag "update_fields" do
+  - @customer_fields.each do |cf|
+    .row-fluid
+      .span4
+        = label_tag cf.name.titlecase
+        = hidden_field_tag "cf_names[]", cf.name
+      .span4
+        = select_tag "cf_fields[]", options_for_select([string,integer,datetime])
+    %br
+  = hidden_field_tag :customer_type_id, params[:customer_type_id]
+  %br
+  = submit_tag "Update"
+  %br
+  .span6{style: "color:red; margin-left: 0%;"}
+    ="[ " + email_mandatory_msg + " ]"

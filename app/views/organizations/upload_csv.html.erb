@@ -1,5 +1,9 @@
 <h3>Upload File</h3>
 <%= form_tag import_file_organizations_path,multipart: true do %>
+<%= label_tag("Customer Type Name:")%>
+<%= select_tag "customer_type",options_for_select(["Books","Restuarants","Schools"])%>
+</br>
+</br>
 <%= file_field_tag :file %>
 <%= submit_tag "Upload" %>
 <% end %>

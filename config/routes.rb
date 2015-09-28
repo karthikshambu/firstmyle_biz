@@ -10,10 +10,9 @@ FirstmyleBiz::Application.routes.draw do
   
   resources :organizations do
     collection {# get 'customers_new'
-     # post 'import'
       get 'upload_csv'
-      #get 'mapping_fields'
-      post 'import_file'
+      post 'save_header'
+      post 'import_file'     
       }
   end#, path_names: { new: 'enroll' } do
   # end

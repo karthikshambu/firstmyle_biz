@@ -11,18 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150920124409) do
+ActiveRecord::Schema.define(:version => 20150924134639) do
 
   create_table "customer_fields", :force => true do |t|
     t.string   "field_type"
     t.string   "field_name"
     t.string   "field_value"
     t.integer  "customer_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "customer_type_id"
   end
 
   add_index "customer_fields", ["customer_id"], :name => "index_customer_fields_on_customer_id"
+
+  create_table "customer_types", :force => true do |t|
+    t.string   "customer_type"
+    t.integer  "organization_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "name"

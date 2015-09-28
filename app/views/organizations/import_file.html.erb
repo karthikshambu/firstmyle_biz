@@ -1,9 +1,57 @@
 <h3>Fields Mapping </h3>
 
-<%@rowarraydisp.each do |row|%>
-    <%=row[0]%>
-    <%=row[1]%>    
-    <%=row[2]%>  
-    <%=row[3]%>
+<%= form_tag ("/organizations/save_header ") do %>
+<%#@rowarraydisp.each do |i|%>
+<%# i.each do |j|%>
+<%#@header[i+1][j]=j%>
+<%#end%>
+<%#end%>
+
+<% @header.each do |i|%>
+<% i.each do |j|%> 
+ <% if @customer.has_attribute?(j) %>
+ <%="Customer Attribute is "+ j %> 
+ <%else%>
+ <%@customerfield.field_name=j%>
+ <%="Customer Field Attribute is "+ @customerfield.field_name%>
+ <%@customerfield.field_type="string"%>
+<%end%>
 </br>
-  <%end%>
+<%end%>
+<%end%>
+<%= submit_tag "save_header" %>
+<%end%>
+
+
+
+
+<%#@header[0][0] %>
+<%#@customer.name=@header[0][0]%>
+<%#@customer.name%>
+<%#@header[0][1] %>
+<%#@customer.email=@header[0][1]%>
+<%#@customer.email%>
+<%#@header[0][2] %>
+<%#@customer.phone_no=@header[0][2]%>
+<%#@customer.phone_no%>
+<%#@header[0][3] %>
+<%# @customerfield.field_type=@customer.string%>
+<%#@rowarraydisp%>
+
+<%# @header.each do |h|%>
+<%#=h%>
+<%#else%>
+<%#@customerfield.field_name=h%>
+<%#end%> 
+<%#=@header.length%>
+<%# (0..@header.length-1).each do |i|%>
+<%#  .each do |j|%>
+	<%#=@header[j]%>
+<%#=@header[i]%>
+
+
+
+
+
+  
+  
