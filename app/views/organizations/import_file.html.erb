@@ -6,7 +6,6 @@
 <%#@header[i+1][j]=j%>
 <%#end%>
 <%#end%>
-
 <% @header.each do |i|%>
 <% i.each do |j|%> 
  <% if @customer.has_attribute?(j) %>
@@ -21,6 +20,7 @@
 <%end%>
 <%= submit_tag "save_header" %>
 <%end%>
+
 
 <%#@header[0][0] %>
 <%#@customer.name=@header[0][0]%>

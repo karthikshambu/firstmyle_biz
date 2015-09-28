@@ -9,9 +9,21 @@ class OrganizationsController < ApplicationController
   def upload    
   end 
 
-  def save_header   
-   customerfield=CustomerField.new(params[:customerfield])
-   customerfield.save  
+  def save_header
+   @customer=Customer.new
+    @customerfield=CustomerField.new(params[:customerfield])
+
+    @header.each do |i|
+    i.each do |j|
+    if @customer.has_attribute?(j) 
+      else
+        @customerfield.field_name=j
+        @customerfield.field_type="string"
+        #customerfield=CustomerField.new(params[:customerfield])
+        customerfield.save    
+    end
+   end 
+ end 
   end
 
   def import_file   
@@ -31,7 +43,8 @@ class OrganizationsController < ApplicationController
         @rowarraydisp = rowarray          
         counter = counter + 1
       end
-    end     
+    end 
+   end 
    #@rowarraydisp.each do |row|   
     #flag=check_existing_customer(row[0],row[2])
     #if flag.zero?
@@ -59,4 +72,4 @@ class OrganizationsController < ApplicationController
   #end
 end
 
-end
+
